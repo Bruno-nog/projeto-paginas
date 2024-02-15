@@ -1,0 +1,137 @@
+body {
+    font-family: 'Playfair Display', serif;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+main:after {
+    content: '';
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(90deg, rgba(0,0,0,0.9836309523809523) 32%, rgba(8,8,8,0) 57%, rgba(0,0,0,0.7483368347338936) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(0,0,0,0.9836309523809523) 32%, rgba(8,8,8,0) 57%, rgba(0,0,0,0.7483368347338936) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,0.9836309523809523) 32%, rgba(8,8,8,0) 57%, rgba(0,0,0,0.7483368347338936) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+    z-index: -1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-evenly;
+}
+
+.info .logo {
+    max-width: 350px;
+}
+
+.info .titulo {
+    color: #fff;
+    text-transform: uppercase;
+    font-size:30px;
+    margin-bottom:60px;
+    cursor: default;
+    display: none;
+}
+
+.info .titulo.aparecer {
+    display: block;
+}
+
+.info .description {
+    width: 44%;
+    letter-spacing: 1px;
+    font-size: 20px;
+    color: #fff;
+    line-height: 30px;
+    display: none;
+}
+
+.info .description.mostrar {
+    display: block;
+}
+
+.btn-carrossel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-carrossel .btn {
+    background-color: #ffffff;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-color: #ffffff;
+}
+
+.btn-carrossel .btn.selected {
+    background-color: #ff2400;
+}
+
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.menu-lateral ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-lateral .icon, i {
+    font-size: 30px;
+    color: #fff;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.menu-lateral i:hover {
+    transform: scale(1.2);
+    color: #ff2400;
+}
+
+.carrossel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.carrossel .image {
+    width: 100%;
+    height: 100vh;
+    bottom: 0;
+    position: relative;
+    object-fit: cover;
+    display: none;
+    animation: mudarImagem 0.7s;
+}
+
+.carrossel .image.actived {
+    display: block;
+}
+
+@keyframes mudarImagem{
+    from{
+        opacity: 0.85;
+    }
+    to {
+        opacity: 1;
+    }
+}
